@@ -1,3 +1,7 @@
 .turbo
 .git
 node_modules
+dist/
+
+!/docker/data/db/.gitkeep
+docker/data/db
