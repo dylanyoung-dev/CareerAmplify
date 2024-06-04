@@ -2,4 +2,26 @@ version: '3.8'
 services:
   db:
     image: mysql:8.2.0
-    command: [--default-authentication-]
+    command: [--default-authentication-plugin=mysql_native_password]
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - careeramplifynetwork
+    environment:
+      MYSQL_DATABASE: 'CareerAmplifyDb'
+      MYSQL_ROOT_PASSWORD: '!Password123'
+    volumes:
+      - .\docker\data\db:/var/lib/mysql:rw
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - careeramplifynetwork
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+networks:
+  careeramplifynetwork:
+    driver: bridge
