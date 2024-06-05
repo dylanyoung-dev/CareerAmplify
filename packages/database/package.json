@@ -2,16 +2,30 @@
   "name": "@ignium/careeramplify-database",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
-  "types": "./index.ts",
+  "exports": {
+    ".": "./src/client.ts"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push --skip-generate",
-    "db:generate": "prisma generate"
+    "db:generate": "prisma generate",
+    "dev": "tsup src/* --watch",
+    "format": "prisma format",
+    "studio": "prisma studio"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prisma": "^5.14.0"
+    "@ignium/careeramplify-typescript": "*",
+    "@types/node": "^20.14.1",
+    "prisma": "^5.15.0",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0",
+    "tsx": "^4.11.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.15.0"
   }
 }
