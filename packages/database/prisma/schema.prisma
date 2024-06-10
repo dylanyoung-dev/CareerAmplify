@@ -11,7 +11,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  referentialIntegrity = "prisma"
+  relationMode = "prisma"
 }
 
 model User {
@@ -19,6 +19,7 @@ model User {
   email     String   @unique
   name      String?
   password  String
+  externalId String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

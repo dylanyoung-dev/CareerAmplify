@@ -2,15 +2,15 @@
   "name": "@ignium/careeramplify-database",
   "version": "1.0.0",
   "description": "",
-  "exports": {
-    ".": "./src/client.ts"
-  },
+  "main": "dist/client.js",
+  "types": "dist/client.d.ts",
   "scripts": {
+    "build": "tsup src/* --dts --minify",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push --skip-generate",
     "db:generate": "prisma generate",
-    "dev": "tsup src/* --watch",
+    "dev": "tsup src/* --watch --dts --minify",
     "format": "prisma format",
     "studio": "prisma studio"
   },

@@ -22,7 +22,7 @@ const initServer = async () => {
 
   app.use(
     '/graphql',
-    cors<cors.CorsRequest>(corsOptions),
+    cors(corsOptions),
     bodyParser.json(),
     expressMiddleware(apolloServer, { context: async ({ req }) => await createContext(req) })
   );

@@ -1,4 +1,4 @@
-import { prisma } from '@ignium/careeramplify-database;';
+import { prisma } from '@ignium/careeramplify-database';
 
 export type Context = {
   dbClient: typeof prisma;
