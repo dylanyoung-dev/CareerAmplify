@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsup src/* --watch --onSuccess \"node dist/index.js\"",
-    "build": "tsup src/index.ts"
+    "dev": "tsup --watch --onSuccess \"node dist/index.js\"",
+    "build": "tsup"
   },
   "author": "",
   "license": "ISC",

@@ -12,6 +12,6 @@ export const schema = makeSchema({
   },
   contextType: {
     export: 'Context',
-    module: join(path.dirname(__filename), 'context.ts')
+    module: join(path.dirname(__filename), 'graphql', 'context.js')
   }
 });

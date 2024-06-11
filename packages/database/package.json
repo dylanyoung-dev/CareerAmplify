@@ -5,12 +5,12 @@
   "main": "dist/client.js",
   "types": "dist/client.d.ts",
   "scripts": {
-    "build": "tsup src/* --dts --minify",
+    "build": "tsup",
     "db:migrate:deploy": "prisma migrate deploy",
     "db:migrate:dev": "prisma migrate dev",
     "db:push": "prisma db push --skip-generate",
     "db:generate": "prisma generate",
-    "dev": "tsup src/* --watch --dts --minify",
+    "dev": "tsup --watch",
     "format": "prisma format",
     "studio": "prisma studio"
   },
