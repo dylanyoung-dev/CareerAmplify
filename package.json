@@ -7,7 +7,7 @@
   ],
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma",
-    "seed": "tsx packages/database/src/seed.ts"
+    "seed": "tsx packages/database/prisma/seed.ts"
   },
   "version": "1.0.0",
   "description": "",
@@ -18,7 +18,7 @@
     "db:migrate:dev": "turbo watch db:migrate:dev",
     "db:migrate:deploy": "turbo run db:migrate:deploy",
     "db:push": "turbo run db:push",
-    "db:seed": "turbo run db:seed",
+    "db:seed": "npx prisma db seed",
     "db:generate": "turbo run db:generate",
     "dev": "turbo watch dev",
     "test": "echo \"Error: no test specified\" && exit 1"
